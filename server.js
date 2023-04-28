@@ -1,22 +1,36 @@
-const express = require("express");
+import express from "express";
+import colors from "colors";
+import dotenv from "dotenv";
+import morgan from "morgan";
+import connectDB from "./config/db.js";
+
+//configure env
+dotenv.config();
+
+//database config
+
+connectDB();
 
 //rest Object
 const app = express();
 
+//middlewares
+app.use(express.json());
+app.use(morgan("dev"));
+
 //rest api
 
 app.get("/", (req, res) => {
-  res.send({
-    message: "welcome to e-commerce app",
-  });
+  res.send("<h1>Welcome to E-commerce app</h1>");
 });
 
 //PORT
-
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 //RUN LISTEN
 
 app.listen(PORT, () => {
-  console.log(`Server Running on ${PORT}`);
+  console.log(
+    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgRed.white
+  );
 });
