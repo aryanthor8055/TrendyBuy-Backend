@@ -11,14 +11,13 @@ import cors from "cors";
 //configure env
 dotenv.config();
 
-//database config
-
+//databse config
 connectDB();
 
-//rest Object
+//rest object
 const app = express();
 
-//middlewares
+//middelwares
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
@@ -29,18 +28,17 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 //rest api
-
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome to E-commerce app</h1>");
+  res.send("<h1>Welcome to TrendyBuy</h1>");
 });
 
 //PORT
 const PORT = process.env.PORT || 8080;
 
-//RUN LISTEN
-
+//run listen
 app.listen(PORT, () => {
   console.log(
-    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgRed.white
+    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan
+      .white
   );
 });
