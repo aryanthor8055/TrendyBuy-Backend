@@ -15,7 +15,7 @@ export const requireSignIn = async (req, res, next) => {
   }
 };
 
-//admin acceess
+//admin access
 export const isAdmin = async (req, res, next) => {
   try {
     const user = await userModel.findById(req.user._id);
@@ -32,7 +32,7 @@ export const isAdmin = async (req, res, next) => {
     res.status(401).send({
       success: false,
       error,
-      message: "Error in admin middelware",
+      message: "Error in admin middleware",
     });
   }
 };
