@@ -1,7 +1,7 @@
-import userModel from "../models/userModel.js";
-import orderModel from "../models/orderModel.js";
+import userModel from "../models/userModel.mjs";
+import orderModel from "../models/orderModel.mjs";
 
-import { comparePassword, hashPassword } from "./../helpers/authHelper.js";
+import { comparePassword, hashPassword } from "../helpers/authHelper.js";
 import JWT from "jsonwebtoken";
 
 export const registerController = async (req, res) => {

@@ -8,8 +8,8 @@ import {
   getOrdersController,
   getAllOrdersController,
   orderStatusController,
-} from "../controllers/authController.js";
-import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
+} from "../controllers/authController.mjs";
+import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.mjs";
 
 //router object
 const router = express.Router();

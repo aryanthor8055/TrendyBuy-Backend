@@ -1,6 +1,6 @@
-import productModel from "../models/productModel.js";
+import productModel from "../models/productModel.mjs";
 import categoryModel from "../models/categoryModel.mjs";
-import orderModel from "../models/orderModel.js";
+import orderModel from "../models/orderModel.mjs";
 
 import fs from "fs";
 import braintree from "braintree";
