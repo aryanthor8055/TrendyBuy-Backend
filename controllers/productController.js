@@ -1,5 +1,5 @@
 import productModel from "../models/productModel.js";
-import categoryModel from "../models/categoryModel.js";
+import categoryModel from "../models/categoryModel.mjs";
 import orderModel from "../models/orderModel.js";
 
 import fs from "fs";
