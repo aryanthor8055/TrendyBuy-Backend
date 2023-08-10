@@ -7,15 +7,10 @@ import authRoutes from "./routes/authRoute.mjs";
 import categoryRoutes from "./routes/categoryRoutes.mjs";
 import productRoutes from "./routes/productRoutes.mjs";
 import cors from "cors";
-import path from 'path'
-import {fileURLToPath} from 'url'
 
 //configure env
 dotenv.config();
 
-//es module fixed
-const __filename=fileURLToPath(import.meta.url);
-const __dirname=path.dirname(__filename)
 
 //databse config
 connectDB();
@@ -27,18 +22,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname,'./frontend/build')))
 
 
 //routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
-
-app.use('*',function(req,res){
-  const index = path.join(__dirname, 'build', 'index.html');
-  res.sendFile(index)
-})
 
 
 //PORT
