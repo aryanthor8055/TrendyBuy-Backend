@@ -36,7 +36,8 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 app.use('*',function(req,res){
-  res.sendFile(path.join(__dirname,'./frontend/build/index.html'))
+  const index = path.join(__dirname, 'build', 'index.html');
+  res.sendFile(index)
 })
 
 
